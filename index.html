@@ -1,0 +1,566 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>User Manual · The Problem Solving Workbook App</title>
+<meta name="description" content="Step-by-step user manual for The Problem Solving Workbook companion app — Creed to Commerce™ · The Balanced Middle Path Academy, LLC.">
+<meta name="theme-color" content="#93400f">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{--brown:#93400f;--green:#1f4d3a;--gold:#c9a24b;--ink:#1f2933;--muted:#5b6670;--bg:#fbf6ec;--card:#fff;--line:#e6dccb;--tint:#fdf8ee;--code:#f3ede1}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:76px}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.65 system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+a{color:var(--brown)}
+.ar{font-family:Amiri,"Traditional Arabic",serif;direction:rtl}
+/* top bar */
+.top{position:sticky;top:0;z-index:30;background:var(--brown);color:#fff;display:flex;align-items:center;gap:12px;padding:10px 16px}
+.top b{font-size:15px;flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.top a,.top button{color:#fff;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.35);border-radius:999px;padding:6px 14px;font:600 13px system-ui;text-decoration:none;cursor:pointer}
+.top a:hover,.top button:hover{background:rgba(255,255,255,.25)}
+#menuBtn{display:none}
+.wrap{display:grid;grid-template-columns:270px minmax(0,1fr);max-width:1180px;margin:0 auto;gap:0}
+nav.toc{position:sticky;top:52px;align-self:start;height:calc(100vh - 52px);overflow:auto;padding:22px 14px 40px 18px;border-right:1px solid var(--line)}
+nav.toc h2{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin:0 0 10px}
+nav.toc a{display:block;text-decoration:none;color:var(--ink);padding:5px 10px;border-radius:8px;font-size:14.5px;line-height:1.35}
+nav.toc a:hover{background:#f3e8d4}
+nav.toc a.on{background:var(--brown);color:#fff;font-weight:600}
+nav.toc a.sub{padding-left:22px;font-size:13.5px;color:var(--muted)}
+nav.toc a.sub.on{color:#fff}
+main{padding:28px 28px 60px;min-width:0}
+/* cover */
+.cover{background:var(--brown);color:#fff;border-radius:16px;padding:34px 26px;text-align:center;outline:2px solid #fff;outline-offset:-10px;position:relative;margin-bottom:30px}
+.cover .bas{font-size:34px;line-height:1.5;margin-bottom:6px}
+.cover h1{margin:10px 0 4px;font-size:clamp(26px,5vw,40px);line-height:1.15}
+.cover p{margin:4px auto;max-width:560px;opacity:.95}
+.cover .bar{width:70px;height:3px;background:var(--gold);margin:14px auto}
+.cover small{display:block;margin-top:14px;font-family:Amiri,serif;font-size:17px;color:#e6c97f}
+/* content */
+section{margin:0 0 46px}
+h2.sec{font-size:26px;color:var(--brown);margin:0 0 6px;padding-bottom:8px;border-bottom:3px solid var(--gold);line-height:1.25}
+h2.sec .n{display:inline-block;background:var(--green);color:#fff;border-radius:999px;font-size:14px;padding:2px 11px;margin-right:8px;vertical-align:middle}
+h3{font-size:19px;color:var(--green);margin:28px 0 6px}
+h4{font-size:15.5px;margin:18px 0 4px}
+p{margin:8px 0}
+ul,ol{padding-left:22px;margin:8px 0}li{margin:4px 0}
+.box{border-radius:12px;padding:12px 16px;margin:14px 0;border:1px solid var(--line);background:var(--card)}
+.box b.t{display:block;font-size:12px;letter-spacing:.1em;text-transform:uppercase;margin-bottom:2px}
+.tip{background:#eef6f1;border-color:#b9d6c6}.tip b.t{color:var(--green)}
+.note{background:var(--tint);border-color:var(--gold)}.note b.t{color:var(--brown)}
+.warn{background:#fdeeea;border-color:#e7b3a6}.warn b.t{color:#a3321a}
+kbd,.btn,code{font:600 .86em ui-monospace,Menlo,Consolas,monospace}
+code{background:var(--code);padding:1px 6px;border-radius:5px}
+kbd{background:#fff;border:1px solid #cbbfa8;border-bottom-width:2px;border-radius:6px;padding:1px 7px}
+.btn{display:inline-block;font-family:system-ui,sans-serif;font-weight:700;font-size:.82em;background:#fff;border:1.5px solid var(--brown);color:var(--brown);border-radius:8px;padding:1px 9px;white-space:normal}
+.btn.fill{background:var(--brown);color:#fff}.btn.green{background:var(--green);border-color:var(--green);color:#fff}.btn.danger{border-color:#a3321a;color:#a3321a}
+table{border-collapse:collapse;width:100%;margin:12px 0;font-size:14.5px;background:var(--card);border-radius:10px;overflow:hidden}
+th,td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
+th{background:#f3e8d4;color:var(--brown);font-size:13px}
+.tblwrap{overflow-x:auto}
+.steps{counter-reset:s;list-style:none;padding:0}
+.steps>li{counter-increment:s;position:relative;padding:4px 0 4px 44px;margin:10px 0}
+.steps>li::before{content:counter(s);position:absolute;left:0;top:2px;width:30px;height:30px;border-radius:50%;background:var(--brown);color:#fff;font-weight:700;display:grid;place-items:center;font-size:14px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px;margin:14px 0}
+.grid .box{margin:0}
+.grid h4{margin-top:0;color:var(--brown)}
+/* mock UI */
+.mock{border:1.5px solid var(--line);border-radius:12px;background:#fff;margin:14px 0;overflow:hidden;font-size:13px}
+.mock .bar{display:flex;gap:8px;align-items:center;padding:8px 10px;border-bottom:1px solid var(--line);background:#fff}
+.mock .bar .brand{color:var(--brown);font-weight:700;flex:1}
+.mock .pillrow{display:flex;gap:6px;flex-wrap:wrap;padding:8px 10px;background:#fbfaf8;border-bottom:1px solid var(--line)}
+.mock .pill{border:1px solid var(--line);border-radius:999px;padding:2px 10px;background:#fff}.mock .pill.on{background:var(--brown);color:#fff;border-color:var(--brown)}
+.mock .body{padding:12px 14px;color:var(--muted)}
+.mock .foot{display:flex;gap:8px;padding:8px 10px;border-top:1px solid var(--line);background:#fff}
+.mock .foot span.sel{flex:1;border:1px solid var(--line);border-radius:6px;padding:2px 8px}
+.mock .lab{display:inline-block;background:var(--gold);color:#3d2a00;border-radius:999px;font-weight:700;font-size:11px;padding:0 7px;margin-left:4px}
+.prog{display:inline-flex;align-items:center;gap:6px}.prog i{display:inline-block;width:70px;height:7px;border-radius:9px;background:#e9e5e0;position:relative;overflow:hidden}.prog i::after{content:"";position:absolute;inset:0;width:40%;background:linear-gradient(90deg,var(--green),var(--gold))}
+.cap{font-size:12.5px;color:var(--muted);margin:-6px 0 14px;text-align:center}
+details{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:2px 14px;margin:8px 0}
+summary{cursor:pointer;font-weight:700;padding:9px 0;color:var(--green)}
+details[open] summary{border-bottom:1px solid var(--line);margin-bottom:6px}
+footer.pg{border-top:3px solid var(--gold);padding:18px 0 0;text-align:center;color:var(--muted);font-size:13px}
+footer.pg b{font-family:Amiri,serif;font-size:18px;color:var(--green);display:block}
+/* responsive */
+@media(max-width:860px){
+  .wrap{display:block}
+  #menuBtn{display:inline-block}
+  nav.toc{position:fixed;left:0;top:52px;bottom:0;width:min(84vw,310px);background:var(--bg);z-index:40;transform:translateX(-102%);transition:transform .2s;border-right:1px solid var(--line);box-shadow:6px 0 24px rgba(0,0,0,.18);height:auto}
+  nav.toc.open{transform:none}
+  main{padding:18px 16px 50px}
+  .cover{padding:26px 16px}
+}
+/* print */
+@media print{
+  .top,nav.toc,.noprint{display:none!important}
+  body{background:#fff;font-size:11.5pt}
+  .wrap{display:block}main{padding:0}
+  section{page-break-inside:auto}
+  h2.sec,h3{page-break-after:avoid}
+  .box,table,.mock,details{page-break-inside:avoid}
+  details{border:1px solid var(--line)}
+  details>*{display:block}
+  .cover{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .btn.fill,.btn.green,th,.steps>li::before,.mock .pill.on{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  a{color:inherit;text-decoration:none}
+}
+</style>
+</head>
+<body>
+
+<div class="top" role="banner">
+  <button id="menuBtn" aria-label="Open contents">☰ Contents</button>
+  <b>User Manual · The Problem Solving Workbook App</b>
+  <button class="noprint" onclick="window.print()">Print manual</button>
+  <a href="./" class="noprint">Open the app →</a>
+</div>
+
+<div class="wrap">
+<nav class="toc" id="toc" aria-label="Manual contents">
+  <h2>Contents</h2>
+  <a href="#welcome">1 · Welcome</a>
+  <a href="#quickstart">2 · Quick start</a>
+  <a href="#tour">3 · Tour of the screen</a>
+  <a href="#navigate">4 · Moving around</a>
+  <a href="#filling">5 · Filling in the workbook</a>
+  <a href="#quiz">6 · The Self-Assessment</a>
+  <a href="#calculators">7 · The live calculators</a>
+  <a class="sub" href="#c-cash">Cash Flow Reality Check</a>
+  <a class="sub" href="#c-profit">Profit-First Split</a>
+  <a class="sub" href="#c-buffer">Emergency Buffer</a>
+  <a class="sub" href="#c-debt">Debt Detangler</a>
+  <a class="sub" href="#c-matrix">Decision Matrix</a>
+  <a href="#action">8 · The 30-Day Action Plan</a>
+  <a href="#cfo">9 · Weekly CFO Hour &amp; log</a>
+  <a href="#edit">10 · Editing tools</a>
+  <a href="#report">11 · PDF reporting</a>
+  <a href="#print">12 · Printing the workbook</a>
+  <a href="#data">13 · Your data &amp; privacy</a>
+  <a href="#settings">14 · Settings</a>
+  <a href="#install">15 · Install &amp; offline use</a>
+  <a href="#map">16 · Page map (1–61)</a>
+  <a href="#deploy">17 · Deploy: GitHub → Vercel</a>
+  <a href="#trouble">18 · Troubleshooting &amp; FAQ</a>
+  <a href="#about">19 · About &amp; disclaimer</a>
+</nav>
+
+<main id="content">
+
+<div class="cover">
+  <div class="ar bas" lang="ar">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</div>
+  <div class="bar"></div>
+  <h1>User Manual</h1>
+  <p><b>The Problem Solving Workbook — Companion App</b></p>
+  <p>Everything you need to work through all 61 pages, use the calculators, build a PDF report, and keep your work safe.</p>
+  <small>Creed to Commerce™ · The Balanced Middle Path Academy, LLC</small>
+</div>
+
+<!-- 1 -->
+<section id="welcome">
+  <h2 class="sec"><span class="n">1</span>Welcome</h2>
+  <p>The Problem Solving Workbook App is the interactive companion to the 61-page PDF workbook. It keeps the same pages, the same numbering and the same worksheets, and adds the things a PDF cannot do: your answers save automatically, scores and money figures calculate for you, progress is tracked, and a professional PDF report can be built from what you have written.</p>
+  <div class="grid">
+    <div class="box"><h4>What stays the same</h4><p>Page order and numbers (1–61), eight sections, 18 core worksheets, 14 reflection prompts, a 30-day action plan and six frameworks.</p></div>
+    <div class="box"><h4>What the app adds</h4><p>Autosave, quiz scoring, five live calculators, a progress bar, sample data, undo, backup/restore and PDF reports.</p></div>
+    <div class="box"><h4>What you need</h4><p>Any modern browser on a phone, tablet or computer. No account, no download and no sign-up.</p></div>
+  </div>
+  <div class="box note"><b class="t">Your privacy in one line</b>Everything you type stays in this browser on this device. Nothing is uploaded to any server. See <a href="#data">Your data &amp; privacy</a>.</div>
+</section>
+
+<!-- 2 -->
+<section id="quickstart">
+  <h2 class="sec"><span class="n">2</span>Quick start (5 minutes)</h2>
+  <ol class="steps">
+    <li><b>Open the app</b> and tap <span class="btn fill">TAP TO BEGIN →</span> on the cover. On a return visit you will also see <span class="btn">Continue where I left off</span>.</li>
+    <li><b>Read pages 4–5</b> (Welcome and How To Use This Workbook), then go to the <b>Quiz</b> tab.</li>
+    <li><b>Answer the ten statements</b> on pages 7–8. Be honest about your <i>average</i> behaviour, not your best week.</li>
+    <li><b>Read your score</b> on page 9. The app shows your profile and links straight to the worksheets it recommends.</li>
+    <li><b>Work the recommended worksheets</b> in the <b>Worksheets</b> tab. Type in any box; it saves by itself.</li>
+    <li><b>Tick your first moves</b> in the <b>Action</b> tab (pages 47–49) and set your Day 1 and Day 30 dates on page 46.</li>
+    <li><b>Build a report</b> any time: <span class="btn">☰ Tools</span> → <span class="btn fill">Build PDF report</span>.</li>
+  </ol>
+  <div class="box tip"><b class="t">Want to see it working first?</b>Open <span class="btn">☰ Tools</span> → <span class="btn">Load sample data</span>. A filled-in example appears so you can explore the scores, calculators and report. When you are done, choose <span class="btn">Clear sample data</span> — it removes only what the sample added and leaves your own entries untouched.</div>
+</section>
+
+<!-- 3 -->
+<section id="tour">
+  <h2 class="sec"><span class="n">3</span>Tour of the screen</h2>
+  <p>After the cover, every page uses the same three zones: the <b>top bar</b>, the <b>page</b> itself, and the <b>bottom bar</b>.</p>
+  <div class="mock" aria-label="Diagram of the app layout">
+    <div class="bar"><span class="brand">The Problem Solving Workbook</span><span class="prog">21% <i></i></span><span class="btn">PDF Report</span><span class="btn fill">☰ Tools</span></div>
+    <div class="pillrow"><span class="pill">Welcome</span><span class="pill">Quiz</span><span class="pill on">Goals</span><span class="pill">Worksheets</span><span class="pill">Reflect</span><span class="pill">Action</span><span class="pill">Frameworks</span><span class="pill">Bonus</span></div>
+    <div class="body"><b style="color:var(--brown)">Page area</b> — headings, prompts, writing boxes, checkboxes and calculators.<br>At the foot of pages with fields: <span class="btn">Clear this page</span> <span class="btn">Print this page</span> <span class="btn">PDF report</span></div>
+    <div class="foot"><span class="btn">‹ Prev</span><span class="sel">10 · Goal 1 — Your Money Vision</span><span class="btn fill">Next ›</span></div>
+  </div>
+  <p class="cap">Simplified layout. Colours and spacing vary slightly by device.</p>
+  <table>
+    <tr><th>Control</th><th>What it does</th></tr>
+    <tr><td><b>Progress bar &amp; %</b></td><td>Shows how many of the workbook's fields have an answer. It updates as you type.</td></tr>
+    <tr><td><span class="btn">PDF Report</span></td><td>Opens the report builder (see <a href="#report">PDF reporting</a>).</td></tr>
+    <tr><td><span class="btn fill">☰ Tools</span></td><td>Opens the tools drawer: reports, printing, backup, sample data, settings, help.</td></tr>
+    <tr><td><b>Section pills</b></td><td>Eight tabs that jump to the first page of each section. The current section is highlighted.</td></tr>
+    <tr><td><b>‹ Prev / Next ›</b></td><td>Step one page at a time.</td></tr>
+    <tr><td><b>Page menu</b></td><td>The drop-down between Prev and Next lists every page by number and title.</td></tr>
+  </table>
+</section>
+
+<!-- 4 -->
+<section id="navigate">
+  <h2 class="sec"><span class="n">4</span>Moving around</h2>
+  <h3>Four ways to get to a page</h3>
+  <ul>
+    <li><b>Section pills</b> — Welcome, Quiz, Goals, Worksheets, Reflect, Action, Frameworks, Bonus.</li>
+    <li><b>Prev / Next</b> — follows the printed workbook order.</li>
+    <li><b>Page menu</b> — pick any of the 61 pages from the list.</li>
+    <li><b>Table of Contents (page 3)</b> — every card is tappable and shows a small completion bar for its section.</li>
+  </ul>
+  <p>Result cards on the score page and worksheet cross-references (for example “Constraint Finder → p.26”) are also links.</p>
+  <h3>Bookmarkable page links</h3>
+  <p>Each page has its own address ending in <code>#p=</code> and the page number, for example <code>…/#p=17</code> opens Worksheet 04, the Cash Flow Reality Check. Add it to your browser bookmarks, or share it with a client who already has the app.</p>
+  <div class="box tip"><b class="t">Coming back later</b>The app reopens on the cover. Tap <span class="btn">Continue where I left off</span> to return to the page you were on.</div>
+</section>
+
+<!-- 5 -->
+<section id="filling">
+  <h2 class="sec"><span class="n">5</span>Filling in the workbook</h2>
+  <h3>Field types</h3>
+  <div class="tblwrap"><table>
+    <tr><th>You see</th><th>What to do</th><th>Used by</th></tr>
+    <tr><td>One-line box</td><td>Type a short answer.</td><td>Most worksheets, “Because…” lines</td></tr>
+    <tr><td>Large writing box</td><td>Type freely. The box grows with your text; drag its corner to enlarge.</td><td>Reflections, stories, notes</td></tr>
+    <tr><td>Number box</td><td>Digits only. Commas and the currency symbol are not needed.</td><td>Calculators, scores</td></tr>
+    <tr><td>Date box</td><td>Tap to open your device's date picker.</td><td>Action plan, CFO week</td></tr>
+    <tr><td>Radio buttons</td><td>Choose one of Never / Sometimes / Often / Always.</td><td>Self-Assessment</td></tr>
+    <tr><td>Checkbox</td><td>Tap to tick or untick.</td><td>Action plan, CFO checklist</td></tr>
+    <tr><td>★ star</td><td>Marks a favourite idea.</td><td>Twenty-Solutions Sprint</td></tr>
+  </table></div>
+  <h3>Autosave</h3>
+  <p>The app saves a moment after you stop typing, and again when you leave the page. There is no Save button to press. If you close the browser mid-sentence, reopen the app and your text will be there.</p>
+  <div class="box warn"><b class="t">Important</b>Saves live in this browser on this device. Clearing the browser's site data, using a private/incognito window, or switching to a different browser or device will show an empty workbook. Use <a href="#data">Export backup</a> regularly.</div>
+  <h3>Anything can be changed</h3>
+  <p>Every line, box, checkbox and score can be edited at any time. Typed over a calculated number? Clear the box and the app goes back to calculating it for you.</p>
+</section>
+
+<!-- 6 -->
+<section id="quiz">
+  <h2 class="sec"><span class="n">6</span>The Money Mindset Self-Assessment (pages 6–9)</h2>
+  <h3>Answering</h3>
+  <ol>
+    <li>On page 6, enter your <b>gut number</b> (1–10: how in control of your finances you <i>feel</i>) and what you hope the assessment reveals.</li>
+    <li>On pages 7 and 8, choose one answer for each statement.</li>
+  </ol>
+  <div class="tblwrap"><table>
+    <tr><th>Answer</th><th>Points</th></tr>
+    <tr><td>Never</td><td>0</td></tr><tr><td>Sometimes</td><td>1</td></tr><tr><td>Often</td><td>2</td></tr><tr><td>Always</td><td>3</td></tr>
+  </table></div>
+  <p>A live tally sits under each set of statements, so you can see your running score while you answer.</p>
+  <h3>Your score and profile (page 9)</h3>
+  <p>Your total (out of 30) fills in automatically and the matching profile card is highlighted.</p>
+  <div class="tblwrap"><table>
+    <tr><th>Score</th><th>Profile</th><th>Where to focus first</th></tr>
+    <tr><td>0–8</td><td>The Steady Strategist</td><td>Optimisation: Constraint Finder, 80/20 Profit Lens, pricing worksheets.</td></tr>
+    <tr><td>9–16</td><td>The Reactive Juggler</td><td>Systems: Profit-First Split, Weekly CFO Hour, Seasonal Cash Map.</td></tr>
+    <tr><td>17–24</td><td>The Avoidant Firefighter</td><td>Facing the numbers: Cash Flow Reality Check, Your Money Story.</td></tr>
+    <tr><td>25–30</td><td>The Crisis Cycle</td><td>Work slowly and in order, starting with Name the Real Problem.</td></tr>
+  </table></div>
+  <p>Each profile card has tappable links to its recommended worksheets.</p>
+  <h3>Day-1 baseline and Day-30 retake</h3>
+  <ol class="steps">
+    <li>Answer all ten statements, then tap <span class="btn fill">Lock this as my Day-1 score</span>. (If any are unanswered, the app tells you how many are done.)</li>
+    <li>Work the 30-day plan.</li>
+    <li>On Day 30, tap <span class="btn">Start my Day-30 retake</span> and confirm. Your Day-1 score stays saved; the ten answers are cleared so you can answer again.</li>
+    <li>The page then shows <i>“Your locked Day-1 score is X / 30. Current score: Y / 30.”</i> and the PDF report shows both.</li>
+  </ol>
+  <p>Finish with “the statement that stung the most” at the bottom of page 9.</p>
+</section>
+
+<!-- 7 -->
+<section id="calculators">
+  <h2 class="sec"><span class="n">7</span>The live calculators</h2>
+  <p>Calculators appear inside the worksheet where the PDF had a blank grid. Type your numbers in the boxes above each result panel; the panel updates immediately. Results use the currency set under <a href="#settings">Settings</a>.</p>
+
+  <h3 id="c-cash">Cash Flow Reality Check — Worksheet 04 (page 17)</h3>
+  <p>Enter average monthly revenue, total fixed costs, variable costs as a percentage of revenue, and what you actually paid yourself. The panel shows your <b>break-even point</b> per month and your <b>cushion</b> (revenue above break-even; a negative number means a shortfall). Then write what you assumed versus what the numbers say.</p>
+  <div class="box note"><b class="t">Reading the result</b>Break-even = (fixed costs + what you pay yourself) ÷ (1 − variable-cost %). Owner's pay is counted as a cost, so break-even shows the revenue needed to cover the business <i>and</i> you. If revenue sits close to it, a single slow month can put you under water.</div>
+
+  <h3 id="c-profit">Profit-First Split — Worksheet 08 (page 21)</h3>
+  <p>Enter percentages for <b>Profit</b>, <b>Owner's Pay</b>, <b>Tax</b> and <b>Operating Expenses</b>. A meter shows the <b>total allocated</b>; aim for exactly 100%. The panel tells you if you are over or how much is unallocated. Under “Try it on a deposit of”, enter any deposit amount to see how much goes to each slice in your chosen currency.</p>
+
+  <h3 id="c-buffer">Emergency Buffer Builder — Worksheet 09 (page 22)</h3>
+  <p>Enter your bare-bones monthly survival number, how many months of buffer you want, and what you hold today. The panel shows the <b>buffer target</b> (survival number × months), <b>still to build</b> and <b>% funded</b> with a progress meter.</p>
+
+  <h3 id="c-debt">Debt Detangler — Worksheet 10 (page 23)</h3>
+  <p>List up to three debts, each with lender, balance, interest rate and minimum payment. The panel totals your <b>balance</b>, <b>monthly minimums</b> and <b>average rate</b>, then suggests two orders:</p>
+  <ul>
+    <li><b>Avalanche</b> — highest interest rate first (cheapest overall).</li>
+    <li><b>Snowball</b> — smallest balance first (quickest early wins).</li>
+  </ul>
+
+  <h3 id="c-matrix">Decision Matrix — Framework 03 (page 52)</h3>
+  <p>Name up to three options and score each from 1 to 5 on <b>Cost</b>, <b>Profit impact</b>, <b>Speed</b> and <b>Fits my values</b>. The totals table ranks the options. Treat the highest total as a conversation starter, then adjust if your gut disagrees and write why.</p>
+
+  <div class="box tip"><b class="t">Other live helpers</b>The Twenty-Solutions Sprint (page 28) counts your ideas and starred favourites. The quiz page tallies as you answer. The Action Plan pages show moves completed.</div>
+</section>
+
+<!-- 8 -->
+<section id="action">
+  <h2 class="sec"><span class="n">8</span>The 30-Day Action Plan (pages 46–49)</h2>
+  <p>Eighteen moves in three phases of ten days: <b>Stabilise</b> (days 1–10), <b>Systemise</b> (days 11–20) and <b>Strengthen</b> (days 21–30).</p>
+  <ol class="steps">
+    <li>On page 46, set <b>My Day 1</b> and <b>My Day 30</b> and write your accountability move (who you will tell).</li>
+    <li>On each phase page, tick a move when it is done.</li>
+    <li>Add a <b>By when?</b> date and a <b>First tiny step</b> for each move. Tiny means doable in five minutes.</li>
+  </ol>
+  <p>Each page shows moves completed so far (for example “2 of 18”), and the same count appears in the report summary.</p>
+</section>
+
+<!-- 9 -->
+<section id="cfo">
+  <h2 class="sec"><span class="n">9</span>Weekly CFO Hour and your log (pages 31 and 55)</h2>
+  <p>Page 31 (Worksheet 18) sets up your weekly hour. Page 55 (Framework 06) is the checklist you repeat every week.</p>
+  <ol class="steps">
+    <li>Enter <b>Week of</b> and your <b>Cash position today</b>.</li>
+    <li>Tick through the eight checklist items and write one honest paragraph on what you noticed.</li>
+    <li>Tap <span class="btn green">Save this week to my log &amp; start a fresh checklist</span>. The week is stored with its date, items ticked, cash figure and note, and the checklist resets for next week.</li>
+  </ol>
+  <p>Your saved weeks are listed under the checklist and appear as a <b>Weekly CFO log</b> table in the PDF report.</p>
+</section>
+
+<!-- 10 -->
+<section id="edit">
+  <h2 class="sec"><span class="n">10</span>Editing tools</h2>
+  <p>Open <span class="btn fill">☰ Tools</span> for the global tools. Page-level tools are at the foot of each page that has fields.</p>
+  <div class="tblwrap"><table>
+    <tr><th>Tool</th><th>Where</th><th>What it does</th></tr>
+    <tr><td><span class="btn">Clear this page</span></td><td>Foot of each page</td><td>Empties only this page's fields after you confirm. A toast appears with <b>Undo</b> so you can restore them straight away.</td></tr>
+    <tr><td><span class="btn">Load sample data</span></td><td>Tools</td><td>Fills a worked example (about 64 fields). It only fills <i>empty</i> fields, so it never overwrites your real answers.</td></tr>
+    <tr><td><span class="btn">Clear sample data</span></td><td>Tools</td><td>Removes exactly what the sample added — nothing else.</td></tr>
+    <tr><td><span class="btn danger">Erase everything I typed</span></td><td>Tools</td><td>Wipes all answers, scores and the CFO log from this device. Asks you to confirm twice. Cannot be undone, so export a backup first.</td></tr>
+  </table></div>
+  <div class="box tip"><b class="t">Undo window</b>The Undo button on the message at the bottom stays for about seven seconds. If you miss it, restore from a backup file instead (see <a href="#data">Your data</a>).</div>
+</section>
+
+<!-- 11 -->
+<section id="report">
+  <h2 class="sec"><span class="n">11</span>PDF reporting</h2>
+  <p>The report turns your answers into a clean, branded document you can keep, share with an accountant or coach, or bring to a review. It reads live from your workbook, so rebuild it whenever your answers change.</p>
+  <h3>Build a report</h3>
+  <ol class="steps">
+    <li>Tap <span class="btn">PDF Report</span> in the top bar, or <span class="btn fill">☰ Tools</span> → <span class="btn fill">Build PDF report</span>. (The <span class="btn">PDF report</span> button at the foot of each page does the same.)</li>
+    <li>Use the checkboxes to choose what to include:
+      <ul>
+        <li>Executive summary</li><li>Self-assessment</li><li>Goals</li><li>Core worksheets</li><li>Reflections</li><li>30-Day action plan</li><li>Frameworks</li><li>Final review &amp; next steps</li><li>Notes</li><li><b>Answered fields only</b> — leaves out blank prompts so the report stays short.</li>
+      </ul>
+    </li>
+    <li>Choose how to save it (below).</li>
+    <li>Tap <span class="btn">← Back to workbook</span> when finished.</li>
+  </ol>
+  <h3>What the report contains</h3>
+  <ul>
+    <li><b>Cover block</b> with the Basmala, title, prepared-for line (your business name from Settings) and report date.</li>
+    <li><b>Executive summary</b> tiles: workbook completion, self-assessment score, profile, break-even per month, Profit-First split, buffer funded, total debt and 30-day moves done, plus a completion-by-section table and “priorities at a glance”.</li>
+    <li><b>Self-assessment</b> table of all ten statements, your answers and points, with your total and profile (and Day-1 baseline if locked).</li>
+    <li><b>Worksheet answers</b> as question-and-answer pairs, with calculator results shown as result tiles and tables.</li>
+    <li><b>Action plan</b> tables by phase, the <b>Decision Matrix</b> table, and the <b>Weekly CFO log</b>.</li>
+    <li>A <b>Creed to Commerce™</b> footer with the credit line and an educational-use disclaimer.</li>
+  </ul>
+  <h3>Two ways to save</h3>
+  <div class="grid">
+    <div class="box"><h4><span class="btn fill">Print / Save as PDF</span></h4><p>Opens your browser's print dialog. Choose <b>Save as PDF</b> (or your printer) as the destination. This works offline and gives the best text quality, including the Arabic Basmala.</p></div>
+    <div class="box"><h4><span class="btn green">Download PDF file</span></h4><p>Creates a PDF file and downloads it directly. It fetches a small helper library the first time, so you need an internet connection. If it cannot load, the app falls back to the print dialog.</p></div>
+  </div>
+  <div class="box tip"><b class="t">Print dialog tips</b>Set paper to A4 or Letter, margins to Default, and switch <b>Background graphics</b> on so the brown section bars and gold rules appear. On phones, choose “Save as PDF” in the share/print sheet.</div>
+</section>
+
+<!-- 12 -->
+<section id="print">
+  <h2 class="sec"><span class="n">12</span>Printing the workbook</h2>
+  <div class="tblwrap"><table>
+    <tr><th>Option</th><th>Result</th></tr>
+    <tr><td><span class="btn">Print my filled workbook (all 61 pages)</span></td><td>Every page with your answers in place, one workbook page per sheet, with the Creed to Commerce™ footer.</td></tr>
+    <tr><td><span class="btn">Print a blank workbook</span></td><td>All 61 pages with empty fields — for paper-and-pen workshops or clients without the app.</td></tr>
+    <tr><td><span class="btn">Print this page</span></td><td>Only the page you are on.</td></tr>
+  </table></div>
+  <p>Buttons, menus and the top and bottom bars are hidden in print automatically.</p>
+  <p>This manual can be printed too: use the <b>Print manual</b> button at the top of this page.</p>
+</section>
+
+<!-- 13 -->
+<section id="data">
+  <h2 class="sec"><span class="n">13</span>Your data &amp; privacy</h2>
+  <h3>Where your answers live</h3>
+  <p>The app has no server and no account. Your work is stored in your browser's local storage on the device you are using, under a single entry named <code>bmpa_problem_solving_workbook_v1</code>. Nothing is sent to the Balanced Middle Path Academy or anyone else.</p>
+  <div class="grid">
+    <div class="box tip"><b class="t">Good</b>Private by design, works offline, no log-in to forget.</div>
+    <div class="box warn"><b class="t">Trade-off</b>Your data does not follow you between devices or browsers, and can be lost if site data is cleared. Back up.</div>
+  </div>
+  <h3>Back up and restore</h3>
+  <ol class="steps">
+    <li><b>Export:</b> <span class="btn fill">☰ Tools</span> → <span class="btn">Export backup (.json)</span>. A file is saved to your downloads. Keep it somewhere safe (cloud drive, email to yourself).</li>
+    <li><b>Import:</b> on the new device, open the app, then <span class="btn">Import backup (.json)</span> and choose the file. The app asks before replacing what is currently there.</li>
+  </ol>
+  <div class="box note"><b class="t">When to export</b>After each work session, before clearing browser data, before changing phones or computers, and before using <i>Erase everything I typed</i>.</div>
+  <h3>Shared computers</h3>
+  <p>If more than one person uses the same browser profile they will see the same workbook. Use separate browser profiles, or export and then erase when you finish.</p>
+</section>
+
+<!-- 14 -->
+<section id="settings">
+  <h2 class="sec"><span class="n">14</span>Settings</h2>
+  <p>Found at the bottom of the <span class="btn fill">☰ Tools</span> drawer.</p>
+  <div class="tblwrap"><table>
+    <tr><th>Setting</th><th>Options</th><th>Effect</th></tr>
+    <tr><td>Business</td><td>Your business name</td><td>Appears on the report's “Prepared for” line.</td></tr>
+    <tr><td>Currency</td><td>$, £, €, RM, SAR, AED, EGP, PKR, ₹, ₦</td><td>Symbol used in every calculator result and in the report.</td></tr>
+    <tr><td>Text size</td><td>Small, Normal, Large, Extra large</td><td>Scales on-screen text for comfortable reading.</td></tr>
+  </table></div>
+  <p>Settings are saved with your data and included in backups.</p>
+</section>
+
+<!-- 15 -->
+<section id="install">
+  <h2 class="sec"><span class="n">15</span>Install &amp; offline use</h2>
+  <p>The app is a Progressive Web App. After the first visit it caches itself, so it keeps working without internet (the PDF <i>download</i> button and web fonts are the only parts that need a connection).</p>
+  <div class="tblwrap"><table>
+    <tr><th>Device</th><th>How to add it to your home screen / apps</th></tr>
+    <tr><td>iPhone / iPad (Safari)</td><td>Tap <b>Share</b> → <b>Add to Home Screen</b>.</td></tr>
+    <tr><td>Android (Chrome)</td><td>Tap the <b>⋮</b> menu → <b>Install app</b> or <b>Add to Home screen</b>.</td></tr>
+    <tr><td>Windows / Mac / Chromebook (Chrome, Edge)</td><td>Click the install icon at the right of the address bar, or the browser menu → <b>Install</b>.</td></tr>
+  </table></div>
+  <div class="box note"><b class="t">Updates</b>When you publish a new version, the app checks the network first, so users receive changes the next time they open it online. If an old version seems stuck, refresh the page once or twice.</div>
+</section>
+
+<!-- 16 -->
+<section id="map">
+  <h2 class="sec"><span class="n">16</span>Page map (1–61)</h2>
+  <p>Page numbers match the printed PDF. Open any page directly with <code>#p=</code> plus its number.</p>
+  <div class="tblwrap"><table>
+    <tr><th>Pages</th><th>Section (pill)</th><th>Contents</th></tr>
+    <tr><td>1–3</td><td>—</td><td>Cover, title &amp; copyright, Table of Contents</td></tr>
+    <tr><td>4–5</td><td>Welcome</td><td>Welcome — Read This First; How To Use This Workbook</td></tr>
+    <tr><td>6–9</td><td>Quiz</td><td>Self-Assessment intro, statements 1–5, statements 6–10, Your Score</td></tr>
+    <tr><td>10–13</td><td>Goals</td><td>Money Vision; 90-Day Money Target; From 90 Days to 30; This Week's Money Moves</td></tr>
+    <tr><td>14–31</td><td>Worksheets</td><td>See list below</td></tr>
+    <tr><td>32–45</td><td>Reflect</td><td>Reflection prompts 01–14 (7 “looking inward”, 7 “looking forward”)</td></tr>
+    <tr><td>46–49</td><td>Action</td><td>30-Day Action Plan overview; Stabilise; Systemise; Strengthen</td></tr>
+    <tr><td>50–55</td><td>Frameworks</td><td>SMART Money Goal; 80/20 Profit Lens; Decision Matrix; Cash Crunch Triage Protocol; Five Whys Template; Weekly CFO Hour Checklist</td></tr>
+    <tr><td>56–57</td><td>Bonus</td><td>The Bookshelf; The Toolkit &amp; Your Next Steps</td></tr>
+    <tr><td>58–59</td><td>—</td><td>The Final Review; What's Next — 30-Day Continuation Plan</td></tr>
+    <tr><td>60–61</td><td>—</td><td>Working Notes (overflow space)</td></tr>
+  </table></div>
+  <details>
+    <summary>Core worksheets, pages 14–31</summary>
+    <div class="tblwrap"><table>
+      <tr><th>Page</th><th>Worksheet</th><th>Page</th><th>Worksheet</th></tr>
+      <tr><td>14</td><td>01 Name the Real Problem</td><td>23</td><td>10 The Debt Detangler ◼</td></tr>
+      <tr><td>15</td><td>02 Your Money Story</td><td>24</td><td>11 The Five Whys Drill</td></tr>
+      <tr><td>16</td><td>03 Limiting Beliefs → Profitable Truths</td><td>25</td><td>12 Problem Inventory &amp; Triage</td></tr>
+      <tr><td>17</td><td>04 Cash Flow Reality Check ◼</td><td>26</td><td>13 The Constraint Finder</td></tr>
+      <tr><td>18</td><td>05 The Revenue Leak Finder</td><td>27</td><td>14 The Decision Ledger</td></tr>
+      <tr><td>19</td><td>06 The Expense Audit</td><td>28</td><td>15 The Twenty-Solutions Sprint ★</td></tr>
+      <tr><td>20</td><td>07 Pricing Confidence Builder</td><td>29</td><td>16 The Seasonal Cash Map</td></tr>
+      <tr><td>21</td><td>08 The Profit-First Split ◼</td><td>30</td><td>17 Money Boundaries</td></tr>
+      <tr><td>22</td><td>09 The Emergency Buffer Builder ◼</td><td>31</td><td>18 Your Weekly CFO Hour</td></tr>
+    </table></div>
+    <p>◼ = live calculator &nbsp; ★ = favourite stars and idea counter</p>
+  </details>
+</section>
+
+<!-- 17 -->
+<section id="deploy">
+  <h2 class="sec"><span class="n">17</span>Deploy: GitHub → Vercel</h2>
+  <p>For the owner or administrator publishing the app. No build tools are needed — the app is plain HTML, CSS and JavaScript.</p>
+  <h3>Files in the project</h3>
+  <div class="tblwrap"><table>
+    <tr><th>File</th><th>Purpose</th></tr>
+    <tr><td><code>index.html</code></td><td>The complete app (all pages, calculators, reports).</td></tr>
+    <tr><td><code>manual.html</code></td><td>This user manual (link it from your sales page or onboarding email).</td></tr>
+    <tr><td><code>manifest.webmanifest</code>, <code>favicon.svg</code></td><td>Install-to-home-screen details and icon.</td></tr>
+    <tr><td><code>sw.js</code></td><td>Offline support (service worker; network-first so updates arrive quickly).</td></tr>
+    <tr><td><code>vercel.json</code></td><td>Clean URLs and security headers for Vercel.</td></tr>
+    <tr><td><code>README.md</code>, <code>.gitignore</code></td><td>Repo housekeeping.</td></tr>
+  </table></div>
+  <h3>Steps</h3>
+  <ol class="steps">
+    <li>Create a new GitHub repository (for example <code>problem-solving-workbook-app</code>).</li>
+    <li>From the unzipped project folder, run:
+<pre style="background:var(--code);padding:10px 12px;border-radius:8px;overflow:auto;font-size:13px">git init
+git add .
+git commit -m "Initial release"
+git branch -M main
+git remote add origin https://github.com/YOUR-ACCOUNT/problem-solving-workbook-app.git
+git push -u origin main</pre></li>
+    <li>In Vercel choose <b>Add New → Project</b> and import the repository.</li>
+    <li>Set <b>Framework Preset</b> to <b>Other</b>. Leave Build Command, Output Directory and Install Command empty. Click <b>Deploy</b>.</li>
+    <li>Open the Vercel address. The app is at <code>/</code> and the manual at <code>/manual</code>.</li>
+    <li>Optional: add your own domain under <b>Settings → Domains</b>.</li>
+  </ol>
+  <h3>Updating later</h3>
+  <p>Edit the files, <code>git commit</code> and <code>git push</code>. Vercel redeploys automatically. Users' saved answers are not affected by an update.</p>
+  <div class="box note"><b class="t">Before you publish</b>Replace the placeholder links on the cover and footer with your own (Payhip, website, Kit sign-up), and check that the title page text and credit line read the way you want.</div>
+</section>
+
+<!-- 18 -->
+<section id="trouble">
+  <h2 class="sec"><span class="n">18</span>Troubleshooting &amp; FAQ</h2>
+  <details><summary>My answers disappeared.</summary>
+    <p>They are stored in the browser you were using. Check you are on the same browser, the same device, the same web address and not in a private window. If you cleared site data, restore from an exported backup (<a href="#data">Your data</a>).</p></details>
+  <details><summary>Can I use the app on my phone and my laptop?</summary>
+    <p>Yes, but each device has its own copy. Export on one and Import on the other to carry your work across. The last import replaces the data on that device.</p></details>
+  <details><summary>The Download PDF button didn't work.</summary>
+    <p>That button needs internet the first time to fetch its helper library. Use <b>Print / Save as PDF</b> instead, which works offline. Also check that pop-up or download blocking isn't enabled for the site.</p></details>
+  <details><summary>The printed report has no colours.</summary>
+    <p>In the print dialog, turn on <b>Background graphics</b> (Chrome/Edge) or <b>Print backgrounds</b> (Firefox/Safari).</p></details>
+  <details><summary>The Arabic Basmala looks different or missing.</summary>
+    <p>It uses the Amiri web font, which loads online. Offline, your device's default Arabic font is used — still correct, just styled differently.</p></details>
+  <details><summary>A calculator shows a dash instead of a number.</summary>
+    <p>It needs all of its inputs. Fill every box above the result panel (for example, revenue, fixed costs and variable-cost % for break-even). Variable costs must be below 100%, or there is no room left to cover fixed costs.</p></details>
+  <details><summary>The Profit-First total isn't 100%.</summary>
+    <p>Adjust the four percentages until they add up. The total panel shows how far off you are.</p></details>
+  <details><summary>Sample data got mixed with my own answers.</summary>
+    <p>Choose <b>Clear sample data</b>. It removes only the fields the sample filled. Anything you typed afterwards, even over a sample value, stays.</p></details>
+  <details><summary>The app shows an old version after an update.</summary>
+    <p>Refresh once or twice with a connection. If it persists, clear this site's cached files in the browser (not site data, or you will lose your answers — export first to be safe).</p></details>
+  <details><summary>Does the app share my financial figures?</summary>
+    <p>No. Nothing leaves your device unless you export or print it yourself.</p></details>
+  <details><summary>Can my clients use this with me in a session?</summary>
+    <p>Yes. Have them open the app on their own device, or use <b>Print a blank workbook</b> for paper sessions. Ask them to export a backup at the end so they keep their work.</p></details>
+</section>
+
+<!-- 19 -->
+<section id="about">
+  <h2 class="sec"><span class="n">19</span>About &amp; disclaimer</h2>
+  <p>The Problem Solving Workbook and this companion app were developed by <b>Zaid Adib Ansari</b> and <b>The Balanced Middle Path Academy, LLC</b> in conjunction with the <b>Creed to Commerce™</b> Framework.</p>
+  <div class="box warn"><b class="t">Educational use only</b>This workbook offers educational prompts and frameworks. It is not financial, tax, legal or accounting advice. Calculator results are simple estimates based on the numbers you enter. Please consult a qualified professional for decisions specific to your business.</div>
+  <footer class="pg">
+    <div class="ar" lang="ar" style="font-size:22px;color:var(--brown)">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</div>
+    <b>Creed to Commerce™</b>
+    The Balanced Middle Path Academy, LLC · User Manual v1.0
+  </footer>
+</section>
+
+</main>
+</div>
+
+<script>
+(function(){
+  var toc=document.getElementById('toc'),btn=document.getElementById('menuBtn');
+  btn.addEventListener('click',function(){toc.classList.toggle('open')});
+  toc.addEventListener('click',function(e){if(e.target.tagName==='A')toc.classList.remove('open')});
+  var links=[].slice.call(toc.querySelectorAll('a'));
+  var map={};links.forEach(function(a){map[a.getAttribute('href').slice(1)]=a});
+  var secs=[].slice.call(document.querySelectorAll('section[id],h3[id]'));
+  function spy(){
+    var y=window.scrollY+110,cur=null;
+    secs.forEach(function(s){if(s.getBoundingClientRect().top+window.scrollY<=y)cur=s});
+    links.forEach(function(a){a.classList.remove('on')});
+    if(cur&&map[cur.id])map[cur.id].classList.add('on');
+  }
+  window.addEventListener('scroll',spy,{passive:true});spy();
+  window.addEventListener('beforeprint',function(){[].forEach.call(document.querySelectorAll('details'),function(d){d.setAttribute('open','')})});
+})();
+</script>
+</body>
+</html>
